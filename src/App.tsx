@@ -34,28 +34,28 @@ function App() {
         src={dark_strokes}
         style={{
           position: "absolute",
-          transform: "translateX(18%) translateY(17%) rotate(30deg)",
+          transform: `translateX(18%) translateY(17%) rotate(${30}deg)`,
         }}
       />
       <img
         src={sec_hand}
         style={{
           position: "absolute",
-          transform: "translateX(109%) translateY(197%)",
+          transform: `translateX(109%) translateY(197%) rotate(${sec}deg)`,
         }}
       />
       <img
         src={min_hand}
         style={{
           position: "absolute",
-          transform: "translateX(130%) translateY(86%)",
+          transform: `translateX(130%) translateY(86%) rotate(${min}deg)`,
         }}
       />
       <img
         src={hr_hand}
         style={{
           position: "absolute",
-          transform: "translateX(130%) translateY(150%)",
+          transform: `translateX(130%) translateY(150%) rotate(${hr}deg)`,
         }}
       />
     </div>
