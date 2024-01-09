@@ -15,8 +15,8 @@ function App() {
   useEffect(() => {
     setInterval(() => {
       setSec((sec) => (sec + 1) % 60);
-      setMin((min) => (min + 1) % 60);
-      setSec((hr) => (hr + 1) % 12);
+      setMin((min) => (min + 1) % (60 * 60));
+      setHr((hr) => (hr + 1) % (12 * 60 * 60));
     }, 1000);
   }, []);
 
