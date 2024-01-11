@@ -17,7 +17,7 @@ function App() {
       setSec((sec) => (sec + 6) % 360);
       setMin((min) => (min + 0.1) % 360);
       setHr((hr) => (hr + 0.00833) % 360);
-    }, 1000);
+    }, 1000); // if timer set to 100, you can see the clock move faster
   }, []);
 
   return (
