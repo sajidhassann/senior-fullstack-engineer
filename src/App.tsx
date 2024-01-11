@@ -14,37 +14,87 @@ function App() {
 
   useEffect(() => {
     setInterval(() => {
-      setSec((sec) => (sec + 1) % 60);
-      setMin((min) => (min + 1) % (60 * 60));
-      setHr((hr) => (hr + 1) % (12 * 60 * 60));
+      setSec((sec) => (sec + 6) % 360);
+      setMin((min) => (min + 0.1) % 360);
+      setHr((hr) => (hr + 0.00833) % 360);
     }, 1000);
   }, []);
 
   return (
-    <div style={{ position: "relative" }}>
-      <img src={clock} style={{ position: "absolute" }} />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src={clock}
+        style={{
+          transform: "translateX(19%)",
+        }}
+      />
       <img
         src={light_strokes}
         style={{
-          position: "absolute",
-          transform: "translateX(18%) translateY(17%)",
+          transform: "translateX(-95.5%) translateY(-1%)",
         }}
       />
       <img
         src={dark_strokes}
         style={{
-          position: "absolute",
-          transform: `translateX(18%) translateY(17%) rotate(${30}deg)`,
+          transform: `translateX(-195.5%) translateY(-1%) rotate(${30}deg)`,
         }}
       />
-      <img
-        src={sec_hand}
+      <div
         style={{
-          position: "absolute",
-          transform: `translateX(109%) translateY(197%) rotate(${sec}deg)`,
+          transform: `translateX(-532%) rotateZ(${sec}deg)`,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
         }}
-      />
-      <img
+      >
+        <img
+          src={sec_hand}
+          style={{
+            transform: "translateY(-23%) rotateZ(-120deg)",
+          }}
+        />
+        <img src={sec_hand} style={{ opacity: 0 }} />
+      </div>
+      <div
+        style={{
+          transform: `translateX(-643%) rotateZ(${min}deg)`,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <img
+          src={min_hand}
+          style={{
+            transform: "translateY(-3%) rotateZ(-51.5deg)",
+          }}
+        />
+        <img src={min_hand} style={{ opacity: 0 }} />
+      </div>
+      <div
+        style={{
+          transform: `translateX(-1100%) rotateZ(${hr}deg)`,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <img
+          src={hr_hand}
+          style={{
+            transform: "translateY(7%) rotateZ(48deg)",
+          }}
+        />
+        <img src={hr_hand} style={{ opacity: 0 }} />
+      </div>
+      {/* <img
         src={min_hand}
         style={{
           position: "absolute",
@@ -57,7 +107,7 @@ function App() {
           position: "absolute",
           transform: `translateX(130%) translateY(150%) rotate(${hr}deg)`,
         }}
-      />
+      /> */}
     </div>
   );
 }
